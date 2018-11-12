@@ -1,0 +1,50 @@
+---
+title: "Using the `powers` package"
+author: "Qinxin Lin"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the `powers` package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+_Note_: This package is just for learning purpose.
+
+want box cox, log, square, cube? Easy, just load the `powers` package!
+
+```{r}
+library(powers)
+```
+
+```{r}
+num<-c(1:10)
+square(num)
+cube(num)
+Box_Cox(num,3,4)
+log(num,3)
+```
+
+The `square()` and `cube()` functions are `apply`-family friendly, too!
+
+```{r}
+my_list<-list(1:10,0.5,-0.7)
+## so base-R-boring!
+lapply(my_list,function(x) x^2)
+lapply(my_list,function(x) x^3)
+## Use powers instead!
+lapply(my_list,square)
+lapply(my_list,cube)
+```
+
+They even come with the ability to omit NA!
+
+```{r}
+num<-c(1:10,NA)
+square(num,na.omit = TRUE)
+cube(num,na.omit = TRUE)
+Box_Cox(num,3,4,na.omit = TRUE)
+log(num,3,na.omit = TRUE)
+```
+
+wow!!!

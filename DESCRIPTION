@@ -1,0 +1,17 @@
+Package: powers
+Type: Package
+Title: Convenient Computation of Powers
+Version: 0.1.0
+Author: Qinxin Lin
+Maintainer: Qinxin Lin <qinxinlin0818@gmail.com>
+Description: This package has four exported functions: Box_Cox(), log(), cube(), square(). 
+    One internal function: pow()
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
